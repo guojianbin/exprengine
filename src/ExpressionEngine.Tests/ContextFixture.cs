@@ -462,20 +462,20 @@ namespace ExpressionEngine.Tests
             result.Should().Be("1234 hello, 4567! 8910");
         }
 
-        //[Fact]
-        //public void Should_access_string_field_from_registred_object()
-        //{
-        //    // Given
-        //    var expression = "my_fake.FakeStringField";
-        //    var fake = new FakeObject {FakeStringField = "exactly this"};
-        //    var context = new Context();
+        [Fact]
+        public void Should_access_string_field_from_registred_object()
+        {
+            // Given
+            var expression = "my_fake.FakeStringField";
+            var fake = new FakeObject { FakeStringField = "exactly this" };
+            var context = new Context();
 
-        //    // When
-        //    context.SetObject("my_fake", fake);
-        //    var result = context.EvaluateAs<string>(expression);
+            // When
+            context.SetObject("my_fake", fake);
+            var result = context.EvaluateAs<string>(expression);
 
-        //    // Than
-        //    result.Should().Be("exactly this");
-        //}
+            // Than
+            result.Should().Be("exactly this");
+        }
     }
 }

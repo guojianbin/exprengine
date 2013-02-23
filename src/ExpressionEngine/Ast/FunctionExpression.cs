@@ -1,6 +1,6 @@
-﻿#region License
+#region License
 //
-// Expression Engine Library: ICache.cs
+// Expression Engine Library: FunctionExpression.cs
 //
 // Author:
 //   Giacomo Stelluti Scala (gsscoder@gmail.com)
@@ -26,15 +26,31 @@
 // THE SOFTWARE.
 //
 #endregion
+#region Using Directives
+using System.Collections.Generic;
 
-namespace ExpressionEngine.Internal
+#endregion
+
+namespace ExpressionEngine.Internal.Ast
 {
-    interface ICache<TValue>
+    sealed class FunctionExpression : NameExpression
     {
-        TValue this[string key] { set; get; }
+        public FunctionExpression(string name)
+        {
+            Name = name;
+            Arguments = new List<Expression>();
+        }
 
-        void Add(string key, TValue value);
+        public List<Expression> Arguments { get; private set; }
 
-        bool Contains(string key);
+        public override PrimitiveType ResultType
+        {
+            get { return PrimitiveType.Number; }
+        }
+
+        public override void Accept(Visitor visitor)
+        {
+            visitor.Visit(this);
+        }
     }
 }

@@ -46,13 +46,13 @@ namespace ExpressionEngine.Internal
 
         public abstract void Visit(UnaryExpression expression);
 
-        public abstract void Visit(FunctionCallExpression callExpression);
+        public abstract void Visit(FunctionExpression expression);
 
         public abstract void Visit(BinaryExpression expression);
 
         public abstract void Visit(VariableExpression expression);
 
-        //public abstract void Visit(MemberAcessExpression memberAcessExpression);
+        public abstract void Visit(MemberAcessExpression memberAcessExpression);
 
         protected Scope GlobalScope { get; private set; }
 

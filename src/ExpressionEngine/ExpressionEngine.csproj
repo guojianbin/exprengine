@@ -49,6 +49,7 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Ast\MemberAcessExpression.cs" />
     <Compile Include="EvaluatingVisitor.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -68,7 +69,7 @@
     <Compile Include="TypeConverter.cs" />
     <Compile Include="Ast\BinaryExpression.cs" />
     <Compile Include="Ast\Expression.cs" />
-    <Compile Include="Ast\FunctionCallExpression.cs" />
+    <Compile Include="Ast\FunctionExpression.cs" />
     <Compile Include="Ast\LiteralExpression.cs" />
     <Compile Include="Parser\SyntaxTree.cs" />
     <Compile Include="Ast\NameExpression.cs" />

@@ -13,3 +13,5 @@ src/ExpressionEngine.Console/obj
 src/ExpressionEngine/test-results/*
 src/ExpressionEngine.Tests/test-results/*
 *.DS_Store
+_*.cs
+_*

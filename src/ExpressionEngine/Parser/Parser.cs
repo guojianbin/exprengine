@@ -172,7 +172,7 @@ namespace ExpressionEngine.Internal
                 return varExpr;
             }
 
-            var expr = new FunctionCallExpression(_current.Text);
+            var expr = new FunctionExpression(_current.Text);
             Expect(TokenType.LeftParenthesis);
             while (!_scanner.IsEof())
             {

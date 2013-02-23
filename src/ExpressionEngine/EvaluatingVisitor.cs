@@ -72,11 +72,11 @@ namespace ExpressionEngine.Internal
             }
         }
 
-        public override void Visit(FunctionCallExpression callExpression)
+        public override void Visit(FunctionExpression expression)
         {
-            var name = callExpression.Name;
-            var argsList = new List<object>(callExpression.Arguments.Count);
-            callExpression.Arguments.ForEach(arg =>
+            var name = expression.Name;
+            var argsList = new List<object>(expression.Arguments.Count);
+            expression.Arguments.ForEach(arg =>
             {
                 arg.Accept(this);
                 argsList.Add(_result);
@@ -157,10 +157,10 @@ namespace ExpressionEngine.Internal
             _result = TypeConverter.ToNumber(GlobalScope[name]);
         }
 
-        //public override void Visit(MemberAcessExpression memberAcessExpression)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public override void Visit(MemberAcessExpression memberAcessExpression)
+        {
+            throw new NotImplementedException();
+        }
  
         public override object Result { get { return _result; } }
 
